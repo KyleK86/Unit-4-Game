@@ -3,19 +3,19 @@ var wins = 0;
 var losses = 0;
 var score =0;
 //generate number to reach
-var goalNumber = Math.floor(Math.random()*50)+50;
+var goalNumber = Math.floor(Math.random()*102)+19;
 //generate 4 random numbers
-var crystalOneValue = Math.floor(Math.random()*10)+10;
-var crystalTwoValue = Math.floor(Math.random()*10)+10;
-var crystalThreeValue = Math.floor(Math.random()*10)+10;
-var crystalFourValue = Math.floor(Math.random()*10)+10;
+var crystalOneValue = Math.floor(Math.random()*12)+1;
+var crystalTwoValue = Math.floor(Math.random()*12)+1;
+var crystalThreeValue = Math.floor(Math.random()*12)+1;
+var crystalFourValue = Math.floor(Math.random()*12)+1;
 
 
 
 //set up scoreboard (wins/losses/goal number)
 function scoreBoard() {
-    document.getElementById("winSpace").innerHTML(wins);
-    document.getElementById("lossSpace").innerHTML(losses);
+    document.getElementById("wins").innerHTML(wins);
+    document.getElementById("losses").innerHTML(losses);
     createCrystals();
     
 }

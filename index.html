@@ -9,42 +9,67 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/javascript/game.js"></script>
   <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body onload="scoreBoard()">
 
+  <div id="gameGrid">
 
-  <h1 id="title">Crystal Collector!</h1>
+    <div id="titleWrap">
+      <h1 id="title">Chaos Emerald Collector!</h1>
+    </div>
 
-  <div id="instructions">
-    <h3>You will be given a random number at the start of the game.</h4>
-      <h3>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
+    <div id="instructions">
+      <h4>You will be given a random number at the start of the game.</h4>
+      <h4>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
         score.</h4>
-        <h3>You win the game by matching your total score to random number, you lose the game if your total score goes
-          above the random number.</h4>
-          <h3>The value of each crystal is hidden from you until you click on it.</h4>
-            <h3>Each time when the game starts, the game will change the values of each crystal</h4>
+      <h4>You win the game by matching your total score to random number, you lose the game if your total score goes
+        above the random number.</h4>
+      <h4>The value of each crystal is hidden from you until you click on it.</h4>
+      <h4>Each time when the game starts, the game will change the values of each crystal</h4>
+    </div>
+
+
+
+    <div id="numberWrap">
+      <div><span id="randomNumber">Random Number: </span></div>
+    </div>
+
+    <div id="scoreWrap">
+      <div><span id="scoreDisplay">Your total score is: </span></div>
+    </div>
+  
+
+  <div id="winWrap">
+    <div><span id="wins">Wins: </span></div>
   </div>
 
-  <div id="screen">
-    <!-- Random Number Display -->
-    <div id="randomSpace"></div>
-    <!-- Wins/Losses Display -->
-    <div id="winSpace"></div>
-    <div id="lossSpace"></div>
+  <div id="lossWrap">
+    <div><span id="losses">Losses: </span></div>
   </div>
 
-  <div>
-    <!-- Crystals -->
-    <div id="crystalSpace"></div>
-    <div id="scoreNumber">Your total score is:</div>
-    <!-- Score Display -->
-    <div id="scoreSpace"></div>
+
+
+  <!-- Crystals -->
+  <div id="crystalSpace1">
+    <img src="assets/images/emerald4.jpg" alt="crystal1" style="height: 200px; width: 200px">
   </div>
+  <div id="crystalSpace2">
+    <img src="assets/images/emerald5.jpg" alt="crystal2" style="height: 200px; width: 200px">
+  </div>
+  <div id="crystalSpace3">
+    <img src="assets/images/emerald6.jpg" alt="crystal3" style="height: 200px; width: 200px">
+  </div>
+  <div id="crystalSpace4">
+    <img src="assets/images/emerald7.jpg" alt="crystal4" style="height: 200px; width: 200px">
+  </div>
+
+</div>
+
+  <!-- Score Display -->
+
 
 </body>
 
