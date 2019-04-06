@@ -1,82 +1,109 @@
-//GLOBAL VARIABLES
+// GLOBAL VARIABLES
+// ===================================================================
+var compGuess = 0;
+var userScore = 0;
+var crystal1 = 0;
+var crystal2 = 0;
+var crystal3 = 0;
+var crystal4 = 0;
 var wins = 0;
 var losses = 0;
-var score =0;
-//generate number to reach
-var goalNumber = Math.floor(Math.random()*102)+19;
-//generate 4 random numbers
-var crystalOneValue = Math.floor(Math.random()*12)+1;
-var crystalTwoValue = Math.floor(Math.random()*12)+1;
-var crystalThreeValue = Math.floor(Math.random()*12)+1;
-var crystalFourValue = Math.floor(Math.random()*12)+1;
 
+var isDone = false;
+$("alert").html = message;
+var message = "";
 
-
-//set up scoreboard (wins/losses/goal number)
-function scoreBoard() {
-    document.getElementById("wins").innerHTML(wins);
-    document.getElementById("losses").innerHTML(losses);
-    createCrystals();
-    
-}
-
-//create crystals
-function createCrystals(){
-    //assign random number to each crystal
-    var 
-    crystalOne = document.createElement("DIV") 
-    crystalOne.setAttribute("id","crystalOne")
-
-    var crystalTwo = document.createElement("DIV") 
-    crystalTwo.setAttribute("id","crystalTwo")
-
-    var crystalThree = document.createElement("DIV") 
-    crystalThree.setAttribute("id","crystalThree")
-
-    var crystalFour = document.createElement("DIV") 
-    crystalFour.setAttribute("id","crystalFour")
-
-    //apply crystals to html
-    document.getElementById("crystalSpace").appendChild(crystalOne);
-    document.getElementById("crystalSpace").appendChild(crystalTwo);
-    document.getElementById("crystalSpace").appendChild(crystalThree);
-    document.getElementById("crystalSpace").appendChild(crystalFour);
-    //reset score to zero
-    score = 0;
-    document.getElementById("scoreSpace").innerHTML(score);
-    //set new random goal score
-    goalNumber = Math.floor(Math.random()*50)+50;
-    document.getElementById("randomSpace").innerHTML(goalNumber);
-    
+// FUNCTIONS
+// =====================================================================
+function reset() {
+  isDone = false;
+  compGuess = Math.floor(Math.random() * 102) + 19;
+  console.log(compGuess);
+  userScore = 0;
+  crystal1 = Math.floor(Math.random() * 12) + 1;
+  crystal2 = Math.floor(Math.random() * 12) + 1;
+  crystal3 = Math.floor(Math.random() * 12) + 1;
+  crystal4 = Math.floor(Math.random() * 12) + 1;
+  $("#randomNumber").html(compGuess);
+  $("#scoreDisplay").html(userScore);
+  $("#wins").html(wins);
+  $("#losses").html(losses);
+  
 
 }
-// when user clicks crystal
-    //add crystal value to score
-    //check if user win/loss
-    //compare current score with goal
-        //if equal, user wins
-            //update for win
-        //if under, game continues
-            //update for game continue
-        //if over, user loses
-            //update for user loss
+
+function scoreCheck() {
+  if (userScore === compGuess) {
+     $("#scoreDisplay").html("You Win!");
+     crystal1 = 0;
+     crystal2 = 0;
+     crystal3 = 0;
+     crystal4 = 0;
+     wins++;
+     isDone = true;
+    
+     $("#wins").html(wins);
+     reset();
+  }
+  if (userScore > compGuess) {
+     $("#scoreDisplay").html("You suuuuuck!");
+     crystal1 = 0;
+     crystal2 = 0;
+     crystal3 = 0;
+     crystal4 = 0;
+     losses++;
+     
+     isDone = true;
+     
+     $("#losses").html(losses);
+     reset();
+  }
+}
+
+//
+// =========================================================
 
 
 
-//when user wins
-    //update win counter
-    //alert "win"
-    //run cthreateCrystals
 
 
-//when user loses
-    //update loss counter
-    //alert "you lose"
-    //run createCrystals
+$("#crystal1").on("click", function gemAdd() {
+  userScore = userScore + crystal1;
+  $("#scoreDisplay").html(userScore);
+ 
+  if (isDone === false) {
+     scoreCheck();
+  }
+ 
+  
+});
 
+$("#crystal2").on("click", function gemAdd() {
+  userScore = userScore + crystal2;
+  $("#scoreDisplay").html(userScore);
+ 
+  if (isDone === false) {
+     scoreCheck();
+  }
+});
 
-//if neither
-    //update score
+$("#crystal3").on("click", function gemAdd() {
+  userScore = userScore + crystal3;
+  $("#scoreDisplay").html(userScore);
+ 
+  if (isDone === false) {
+     scoreCheck();
+  }
+});
+
+$("#crystal4").on("click", function gemAdd() {
+  userScore = userScore + crystal4;
+  $("#scoreDisplay").html(userScore);
+ 
+  if (isDone === false) {
+     scoreCheck();
+  }
+});
 
 
 
