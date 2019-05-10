@@ -2,6 +2,7 @@ body {
     background: url("https://vignette.wikia.nocookie.net/mcleodgaming/images/4/4c/New_Green_Hill_Zone.png/revision/latest?cb=20170710101215")no-repeat center center fixed;
     background-size: cover;
     max-width: 100%;
+    max-height: 100vh;
     color: white;
     font-family: 'Holtwood One SC', serif;
 
@@ -10,7 +11,7 @@ body {
 
 hi {
     color: white;
-    font-family:
+
 }
 
 #instructions {
